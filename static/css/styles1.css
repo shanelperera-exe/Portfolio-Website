@@ -1,0 +1,238 @@
+/* Add keyframes for animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideInFromLeft {
+    from {
+        transform: translateX(-100%);
+    }
+    to {
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideInFromRight {
+    from {
+        transform: translateX(100%);
+    }
+    to {
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideInFromBottom {
+    from {
+        transform: translateY(100vh); /* Start from the bottom of the screen */
+    }
+    to {
+        transform: translateY(0);
+    }
+}
+
+@keyframes zoomIn {
+    from {
+        transform: scale(0) translateY(-50%);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1) translateY(-50%);
+        opacity: 1;
+    }
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    font-family: Arial, sans-serif;
+    font-family: "JetBrains Mono", serif;
+    font-weight: bold;
+    animation: fadeIn 1s ease-in-out; /* Add fade-in animation */
+}
+
+.navbar a {
+    text-decoration: none;
+    color: #0d221b;
+    margin: 0 15px; /* Adjusted margin for more spacing */
+    padding: 5px 10px; /* Added padding for more spacing */
+    transition: color 0.3s ease, transform 0.3s ease; /* Add transition for color and transform */
+}
+
+.navbar .left {
+    font-weight: bold;
+    padding-left: 15px; /* Added left padding */
+}
+
+.navbar .right {
+    display: flex;
+}
+
+.navbar .right a:hover {
+    color: #ff5500; /* Change color on hover */
+    transform: scale(1.1); /* Scale up slightly on hover */
+}
+
+.navbar .right a.current {
+    color: #ff5500; /* Highlight current directory in orange */
+}
+
+.navbar .btn-dark {
+    color: white; /* Make button text white */
+    background-color: #0d221b; /* Ensure the initial background color is set */
+    transition: background-color 0.3s ease, transform 0.3s ease, color 0.3s ease; /* Add transition for background color, transform, and color */
+}
+
+.navbar .btn-dark:hover {
+    background-color: #ff5500; /* Change background color on hover */
+    transform: scale(1.1); /* Scale up slightly on hover */
+    color: #0d221b !important; /* Change text color to black on hover */
+}
+
+.navbar .btn-dark img {
+    margin-left: 5px;
+    transition: transform 0.3s ease; /* Add transition for transform */
+}
+
+.navbar .btn-dark:hover img {
+    transform: translateX(5px); /* Move the image slightly to the right on hover */
+}
+
+.intro-text {
+    position: absolute;
+    left: 7%; /* Adjust left position as needed */
+    top: 15%; /* Adjust top position as needed */
+    font-size: 98px; /* Adjust font size as needed */
+    color: #0d221b; /* Adjust text color as needed */
+    font-family: "JetBrains Mono", serif;
+    line-height: 1.2; /* Adjust line height as needed */
+    font-weight: bold;
+    animation: slideInFromLeft 1s ease-in-out; /* Add slide-in animation from left */
+}
+
+.my-image {
+    position: fixed;
+    left: 57%; /* Adjust left position as needed */
+    top: 50%;
+    transform: translateY(-50%);
+    transform-origin: center; /* Set the origin point for the transformation */
+    width: 500px; /* Adjust width as needed */
+    height: 500px; /* Maintain aspect ratio */
+    z-index: 10; /* Ensure the image is above the black box */
+    animation: zoomIn 1s ease-in-out; /* Add zoom-in animation */
+}
+
+.bottom-box {
+    position: fixed;
+    bottom: 0;
+    left: 5%;
+    transform: translateX(-50%); /* Center horizontally */
+    width: 90%; /* Adjust width as needed */
+    height: 360px; /* Adjust height as needed */
+    background-color: #0d221b;
+    border-radius: 50px 50px 0 0; /* Rounded top corners only */
+    padding: 20px;
+    box-sizing: border-box;
+    color: white; /* Text color inside the box */
+    animation: slideInFromBottom 1s ease-in-out forwards; /* Add slide-in animation from bottom */
+}
+
+.bottom-box p {
+    margin: 20px 0 0 0; /* Add top margin to lower the paragraph */
+    padding: 0;
+    width: 50%; /* Adjust width as needed */
+    font-family: "JetBrains Mono", serif;
+}
+
+.btn-portfolio {
+    background-color: #ff5500;
+    color: white;
+    border-radius: 50px; /* Rounded corners */
+    padding: 10px 20px; /* Increased padding for larger size */
+    display: inline-flex;
+    align-items: center;
+    text-decoration: none;
+    font-family: "JetBrains Mono", serif;
+    font-weight: bold;
+    font-size: 18px;
+    margin-top: 20px; /* Add margin to create space between paragraph and button */
+    transition: background-color 0.3s ease, transform 0.3s ease, color 0.3s ease, outline 0.3s ease; /* Add transition for background color, transform, color, and outline */
+}
+
+.btn-portfolio:hover {
+    background-color: #0d221b; /* Change background color on hover */
+    transform: scale(1.1); /* Scale up slightly on hover */
+    color: #ff5500; /* Change text color on hover */
+    outline: 2px solid white; /* Add white outline on hover */
+}
+
+.btn-portfolio img {
+    margin-left: 10px; /* Adjusted margin for larger size */
+    background-color: white; /* Background color of the SVG */
+    border-radius: 50%; /* Make the background circular */
+    width: 30px; /* Increased width for larger size */
+    height: 30px; /* Increased height for larger size */
+    transition: transform 0.3s ease; /* Add transition for transform */
+}
+
+.btn-portfolio:hover img {
+    transform: translateX(5px); /* Move the image slightly to the right on hover */
+}
+
+.arrow {
+    margin-left: 100px; /* Space between the static image and the button */
+    width: 120px; /* Adjust width as needed */
+    height: auto; /* Maintain aspect ratio */
+}
+
+.pattern-image {
+    position: absolute;
+    left: 51%; /* Adjust to position the image next to the arrow */
+    bottom: 12%; /* Adjust to position the image above the main image */
+    width: 210px; /* Adjust width as needed */
+    height: auto; /* Maintain aspect ratio */
+    z-index: 15; /* Ensure the image is above the black box and main image */
+}
+
+.footer, .index-footer {
+    background-color: #0d221b;
+    font-family: "JetBrains Mono", serif;
+    font-weight: bold;
+    color: white;
+    text-align: center;
+    padding: 5px 0;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    z-index: 10;
+    animation: fadeIn 1s ease-in-out; /* Add fade-in animation */
+}
+
+.footer.no-bg, .index-footer.no-bg {
+    background-color: transparent; /* No background color for footer with no-bg class */
+}
+
+.footer a, .index-footer a {
+    color: #ff5500;
+    text-decoration: none;
+    margin: 0 5px; 
+}
+
+.footer a:hover, .index-footer a:hover {
+    text-decoration: underline;
+}
+
+.mouse-click {
+    position: absolute;
+    right: 8%; /* Adjust to position the image on the bottom right corner of the main image */
+    bottom: 11%; /* Adjust to position the image on the bottom right corner of the main image */
+    width: 120px; /* Adjust width as needed */
+    height: auto; /* Maintain aspect ratio */
+    z-index: 20; /* Ensure the image is above the main image */
+}

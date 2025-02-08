@@ -1,0 +1,37 @@
+{% include "header.html" %}
+
+<body>
+    <div class="intro-text">
+        I'm Shanel<br>Rad Perera
+    </div>
+
+    <img src="{{ url_for('static', filename='images/my_photo.png') }}" alt="Photo of Shanel Perera" class="my-image">
+    <!-- <img src="{{ url_for('static', filename='images/mouse_click.gif') }}" alt="Mouse Click" class="mouse-click"> -->
+
+    <div class="bottom-box">
+        <div class="bottom-box">
+            <p>Computer Science Undergraduate | Python Developer | Web & Software Developer | Data Science & AI Enthusiast | Martial-Arts Enthusiast | Tech Explorer | Content Writer
+            </p>
+            <div class="portfolio-section">
+                <a href="{{ url_for('about') }}" class="btn-portfolio">
+                    My Portfolio
+                    <img src="{{ url_for('static', filename='svgs/arrow2.svg') }}" alt="Arrow Right" width="25" height="25">
+                </a>
+            </div>
+        </div>
+    </div>
+    <!-- <img src="{{ url_for('static', filename='images/pattern.png') }}" alt="Pattern Image" class="pattern-image"> -->
+</body>
+
+<footer class="index-footer no-bg">
+    <div class="container">
+        <p>&copy; 2025 Shanel Perera. All rights reserved.</p>
+        <p>
+            <a href="#home">Home</a> |
+            <a href="#about-me">About Me</a> |
+            <a href="#blog">Blog</a> |
+            <a href="#projects">Projects</a> |
+            <a href="#contacts">Contacts</a>
+        </p>
+    </div>
+</footer>
