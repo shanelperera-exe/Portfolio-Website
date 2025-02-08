@@ -1,7 +1,68 @@
 {% include "header.html" %}
 
+<head>
+    <link href="{{ url_for('static', filename='css/styles2.css') }}" rel="stylesheet"/>
+</head>
+
 <body>
+    <div class="content-container">
+        <div>
+            <div class="frame">
+                <div class="slideshow">
+                    <img src="{{ url_for('static', filename='images/my_images/photo_1.jpg') }}" alt="Photo 1" class="photo">
+                    <img src="{{ url_for('static', filename='images/my_images/photo_2.jpg') }}" alt="Photo 2" class="photo">
+                </div>
+                <img src="{{ url_for('static', filename='images/frame.png') }}" alt="Frame" class="framed-image">
+            </div>
+        </div>
+        <div class="right-side-box">
+            <h1 class="box-title">About Me</h1>
+            <p class="about-text">
+                Hey there! I’m Shanel Radeesha Perera, a Computer Science undergraduate at SLIIT with a passion for coding and innovation. I specialize in Python development, web and software engineering, and data science, with a focus on AI and machine learning. I enjoy creating impactful solutions through robust software and exploring emerging technologies. <br><br>
+                As a freelancer, I offer graphic design and content writing services, combining creativity with technical expertise to help businesses tell their story. Outside of tech, I’m a martial arts enthusiast, which keeps me disciplined and always striving for growth. <br><br>
+                I’m eager to take on new challenges and collaborate on projects that make a positive impact.
+            </p>
+        </div>
+    </div>
+
+    <div class="container px-4 py-5" id="custom-cards">
+        <h2 class="pb-2 subheading">Education</h2>
     
+        <div class="row row-cols-1 row-cols-lg-3 align-items-stretch g-4 py-5">
+    
+          <div class="col">
+            <div class="card card-cover h-100 overflow-hidden text-bg-dark rounded-4 shadow-lg" style="background-image: url('unsplash-photo-2.jpg');">
+              <div class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1">
+                <h3 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold">Much longer title that wraps to multiple lines</h3>
+                <ul class="d-flex list-unstyled mt-auto">
+                  <li class="me-auto">
+                  </li>
+                  <li class="d-flex align-items-center me-3">
+                  </li>
+                  <li class="d-flex align-items-center">
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+    
+          <div class="col">
+            <div class="card card-cover h-100 overflow-hidden text-bg-dark rounded-4 shadow-lg" style="background-image: url('unsplash-photo-3.jpg');">
+              <div class="d-flex flex-column h-100 p-5 pb-3 text-shadow-1">
+                <h3 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold">Another longer title belongs here</h3>
+                <ul class="d-flex list-unstyled mt-auto">
+                  <li class="me-auto">
+                  </li>
+                  <li class="d-flex align-items-center me-3">
+                  </li>
+                  <li class="d-flex align-items-center">
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+    </div>
 </body>
 
 {% include "footer.html" %}

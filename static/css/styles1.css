@@ -55,6 +55,11 @@
     font-family: "JetBrains Mono", serif;
     font-weight: bold;
     animation: fadeIn 1s ease-in-out; /* Add fade-in animation */
+    position: fixed; /* Make the navbar fixed */
+    top: 0; /* Position it at the top */
+    width: 100%; /* Full width */
+    background-color: white; /* Ensure it has a background color */
+    z-index: 1000; /* Ensure it is above other elements */
 }
 
 .navbar a {
@@ -207,11 +212,18 @@
     color: white;
     text-align: center;
     padding: 5px 0;
-    position: fixed;
     bottom: 0;
     width: 100%;
     z-index: 10;
     animation: fadeIn 1s ease-in-out; /* Add fade-in animation */
+}
+
+.footer {
+    position: relative;
+}
+
+.index-footer {
+    position: fixed;
 }
 
 .footer.no-bg, .index-footer.no-bg {
