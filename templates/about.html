@@ -1,6 +1,7 @@
 {% include "header.html" %}
 
 <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="{{ url_for('static', filename='css/styles2.css') }}" rel="stylesheet"/>
 </head>
 
@@ -26,42 +27,89 @@
     </div>
 
     <div class="container px-4 py-5" id="custom-cards">
-        <h2 class="pb-2 subheading">Education</h2>
+        <section class="timeline">
+            <div class="timeline-row">
+                <div class="timeline-column">
+                    <h2 class="title">Education<span class="animate" style="--i:1;"></span></h2>
     
-        <div class="row row-cols-1 row-cols-lg-3 align-items-stretch g-4 py-5">
+                    <div class="timeline-box">
+                        <div class="timeline-content">
+                            <div class="year-container">
+                                <div class="year">2008 Jan-<br>2022 Dec</div>
+                            </div>
+                            <div class="content">
+                                <div class="content-header">
+                                    <img src="{{ url_for('static', filename='images/dmc.png') }}" alt="DMC Logo" class="org-logo">
+                                    <div>
+                                        <h3>Primary and Secondary Education</h3>
+                                        <p>Physical Sciences (Combined Mathematics, Physics, Chemistry)</p>
+                                        <p class="org-name">De Mazenod College, Kandana, Sri Lanka</p>
+                                    </div>
+                                </div>
+                                <div class="description">
+                                    <ul>
+                                        <li>Passed GCE O/L exam with 9 'A' Passes</li>
+                                        <li>Passed GCE A/L exam in Physical Science Stream</li>
+                                    </ul>
+                                    <br>
+                                    <div>
+                                        <h5 style="font-size: 15px;">Activities and Societies:</h5>
+                                        <ul>
+                                            <li>Member of the school Wushu team (2014-2019)</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="timeline-content">
+                            <div class="year-container">
+                                <div class="year">2024 Jul-<br>Present</div>
+                            </div>
+                            <div class="content">
+                                <div class="content-header">
+                                    <img src="{{ url_for('static', filename='images/sliit.png') }}" alt="SLIIT Logo" class="org-logo">
+                                    <div>
+                                        <h3>Undergraduate</h3>
+                                        <p>BSc.(Hons) in Computer Science</p>
+                                        <p style="font-size: 14px;">Year 1</p>
+                                        <p class="org-name">Sri Lanka Institute of Information Technology (SLIIT)</p>
+                                    </div>
+                                </div>
+                                <div class="description">
+                                    <ul>
+                                        <li>Current GPA: 3.76</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    
+                        <span class="animate" style="--i:2;"></span>
+                    </div>
+                </div>
     
-          <div class="col">
-            <div class="card card-cover h-100 overflow-hidden text-bg-dark rounded-4 shadow-lg" style="background-image: url('unsplash-photo-2.jpg');">
-              <div class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1">
-                <h3 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold">Much longer title that wraps to multiple lines</h3>
-                <ul class="d-flex list-unstyled mt-auto">
-                  <li class="me-auto">
-                  </li>
-                  <li class="d-flex align-items-center me-3">
-                  </li>
-                  <li class="d-flex align-items-center">
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
-    
-          <div class="col">
-            <div class="card card-cover h-100 overflow-hidden text-bg-dark rounded-4 shadow-lg" style="background-image: url('unsplash-photo-3.jpg');">
-              <div class="d-flex flex-column h-100 p-5 pb-3 text-shadow-1">
-                <h3 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold">Another longer title belongs here</h3>
-                <ul class="d-flex list-unstyled mt-auto">
-                  <li class="me-auto">
-                  </li>
-                  <li class="d-flex align-items-center me-3">
-                  </li>
-                  <li class="d-flex align-items-center">
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
+                <div class="timeline-column">
+                    <h2 class="title">Experience<span class="animate" style="--i:4;"></span></h2>
+                
+                    <div class="timeline-box">
+                        <div class="timeline-content">
+                            <div class="year-container">
+                                <div class="year">2024 Dec-<br>Present</div>
+                            </div>
+                            <div class="content">
+                                <div class="content-header">
+                                    <h3>Freelancer</h3>
+                                </div>
+                                <div class="description">
+                                    <p>Python Developer</p>
+                                </div>
+                            </div>
+                        </div>
+                
+                        <span class="animate" style="--i:5;"></span>
+                    </div>
+                </div>
+        </section>
     </div>
 </body>
 

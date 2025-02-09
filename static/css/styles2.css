@@ -102,3 +102,134 @@
     font-size: 50px;
     font-weight: bold;
 }
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "JetBrains Mono", serif;
+}
+
+body {
+    color: #0d221b;
+}
+
+.timeline {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 0 5%; /* Reduce padding to push columns towards the ends of the screen */
+}
+
+.timeline .timeline-row {
+    display: flex;
+    flex-direction: column; /* Stack columns vertically on smaller screens */
+    row-gap: 40px; /* Add gap between rows */
+    justify-content: space-between; /* Distribute columns evenly */
+}
+
+.timeline-row .timeline-column {
+    flex: 1 1 100%; /* Allow columns to take up full width */
+}
+
+.timeline-column .title {
+    position: relative;
+    display: inline-block;
+    font-size: 50px;
+    font-weight: bold;
+    margin: 0 0 30px 30px;
+}
+
+.timeline-column .timeline-box {
+    position: relative;
+    border-left: 2px solid #ff5500;
+}
+
+.timeline-box .timeline-content {
+    position: relative;
+    padding-left: 27px;
+}
+
+.timeline-box .timeline-content::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -10.5px;
+    width: 20px;
+    height: 20px;
+    background: #ff5500;
+    border-radius: 50%;
+}
+
+.timeline-content .content {
+    padding: 24px;
+    background-color: #0d221b; /* Change background color to black */
+    color: white; /* Change text color to white */
+    border: none; /* Remove border */
+    border-radius: 30px;
+    margin-bottom: 32px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add shadow for card effect */
+    width: 100%; /* Add width to make the cards wider */
+    max-width: 600px; /* Increase the maximum width for the cards */
+}
+
+.timeline-content .content .content-header {
+    display: flex;
+    align-items: flex-start; /* Align items to the start */
+    margin-bottom: 16px;
+}
+
+.timeline-content .content .org-logo {
+    width: 60px; /* Adjust the size as needed */
+    height: 60px; /* Adjust the size as needed */
+    margin-right: 16px;
+    margin-top: 0; /* Ensure the top margin is 0 */
+    border-radius: 0; /* Make the logo square */
+}
+
+.timeline-content .content h3 {
+    font-weight: bold;
+    font-size: 19px;
+    margin: 0; /* Ensure the top margin is 0 */
+}
+
+.timeline-box .year-container {
+    position: absolute;
+    left: -130px; /* Adjust the position to align with the orange dot */
+    top: 0;
+    display: flex;
+    align-items: center;
+    height: 20px; /* Match the height of the orange dot */
+    color: #ff5500;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.timeline-content .org-name {
+    font-size: 15px;
+    color: #ff5500;
+}
+
+.timeline-content .content .description {
+    font-size: 14px; /* Adjust the font size as needed */
+    line-height: 1.4; /* Adjust the line height as needed */
+    color: #ffffff; /* Ensure the text color is readable */
+}
+
+/* Media queries for responsiveness */
+@media (min-width: 768px) {
+    .timeline .timeline-row {
+        flex-direction: row; /* Arrange columns side by side on larger screens */
+        column-gap: 80px; /* Keep the gap between columns */
+    }
+
+    .timeline-row .timeline-column {
+        flex: 1 1 45%; /* Allow columns to take up 45% of the width */
+    }
+
+    .timeline-row .timeline-column:nth-child(2) {
+        margin-left: 100px; /* Add left margin to move the experience column to the right */
+        margin-right: -100px; /* Reduce right margin */
+    }
+}
