@@ -6,7 +6,7 @@
 </head>
 
 <body>
-    <div class="content-container">
+    <div class="content-container about-section">
         <div>
             <div class="frame">
                 <div class="slideshow">
@@ -29,7 +29,7 @@
     <div class="container px-4 py-5" id="custom-cards">
         <section class="timeline">
             <div class="timeline-row">
-                <div class="timeline-column">
+                <div class="timeline-column education">
                     <h2 class="title">Education<span class="animate" style="--i:1;"></span></h2>
     
                     <div class="timeline-box">
@@ -88,7 +88,7 @@
                     </div>
                 </div>
     
-                <div class="timeline-column">
+                <div class="timeline-column experience">
                     <h2 class="title">Experience<span class="animate" style="--i:4;"></span></h2>
                 
                     <div class="timeline-box">
@@ -111,6 +111,43 @@
                 </div>
         </section>
     </div>
+
+    <section class="certifications-section">
+        <h2 class="section-title">Licenses & Certifications</h2>
+        <div class="certifications-container">
+            <div class="certificate-card">
+                <a href="https://www.udemy.com/certificate/UC-60370cfb-00bb-4edd-b3f7-ea3d141ef1b5/" target="_blank" rel="noopener noreferrer">
+                    <img src="https://udemy-certificate.s3.amazonaws.com/image/UC-60370cfb-00bb-4edd-b3f7-ea3d141ef1b5.jpg?v=1738661062000" alt="Certificate 1" class="certificate-image">
+                </a>
+                <div class="certificate-info">
+                    <h3>100 Days of Code: The Complete Python Pro Bootcamp</h3>
+                    <p>Issued by: Udemy</p>
+                    <p>Date: Jan 2025</p>
+                </div>
+            </div>
+            <div class="certificate-card">
+                <a href="https://drive.google.com/file/d/1vb0GHrPU2JszMBp1OlsKnRKHAjEdS262/view?usp=sharing" target="_blank" rel="noopener noreferrer">
+                    <img src="{{ url_for('static', filename='images/CS50x.png') }}" alt="Certificate 2" class="certificate-image" style="width: 95%; margin-left: 10px; margin-right: 10px; margin-top: 10px; height: 65%;">
+                </a>
+                <div class="certificate-info">
+                    <h3 style="margin-top: 4px;">CS50's Introduction to Computer Science</h3>
+                    <p>Issued by: Harvard University</p>
+                    <p>Date: Jun 2024</p>
+                </div>
+            </div>
+            <div class="certificate-card">
+                <a href="https://drive.google.com/file/d/1_pbYrUqvcotW-S1CRcNTwWoSHh1vtNOM/view?usp=drive_link" target="_blank" rel="noopener noreferrer">
+                    <img src="{{ url_for('static', filename='images/CS50x.png') }}" alt="Certificate 2" class="certificate-image" style="width: 95%; margin-left: 10px; margin-top: 10px; height: 65%;">
+                </a>
+                <div class="certificate-info">
+                    <h3 style="margin-top: 4px;">CS50's Introduction to Programming with Python</h3>
+                    <p>Issued by: Harvard University</p>
+                    <p>Date: Jun 2024</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
 </body>
 
 {% include "footer.html" %}

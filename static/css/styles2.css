@@ -8,8 +8,8 @@
 
 .frame {
     position: relative;
-    width: 500px; /* Adjust the width as needed */
-    height: 500px; /* Adjust the height as needed */
+    width: 500px; /* Default size for larger screens */
+    height: 500px;
     overflow: hidden;
     margin-left: 30%;
     margin-top: 10%;
@@ -24,13 +24,12 @@
 }
 
 .photo {
-    position: absolute;
-    top: 0;
-    left: 0;
+    position: absolute; /* Ensure images stack on top of each other */
     width: 100%;
     height: 100%;
-    object-fit: cover;
-    opacity: 0;
+    object-fit: contain; /* Prevents cropping */
+    opacity: 0; /* Hide all images by default */
+    transition: opacity 1s ease-in-out;
     animation: slideshow 9s infinite;
 }
 
@@ -97,6 +96,59 @@
     line-height: 1.5;
 }
 
+@media (max-width: 768px) {
+    .content-container {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .frame {
+        width: 100%; /* Reduce width to make the frame smaller */
+        max-height: 400px;
+        max-width: 400px; /* Adjust max width */
+        aspect-ratio: 1/1; /* Ensures it remains a square */
+        margin: 0 auto 5%;
+    }
+
+    .slideshow {
+        width: 100%;
+        height: 100%;
+    }
+
+    .photo {
+        position: relative; 
+        width: 100%;
+        height: 100%;
+        object-fit: cover; /* Ensures the image covers the entire area */
+        object-position: center; /* Centers the image */
+        opacity: 0;
+        transition: opacity 1s ease-in-out;
+        animation: slideshow 9s infinite;
+    }
+
+    .right-side-box {
+        width: 90%; /* Make it take most of the screen width */
+        height: auto;
+        margin: 5% auto;
+        padding: 20px;
+        border-radius: 30px;
+    }
+
+    .box-title {
+        font-size: 60px; /* Reduce font size */
+        text-align: center;
+        margin-left: 0;
+    }
+
+    .about-text {
+        font-size: 14px;
+        text-align: center;
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+}
+
 .subheading {
     font-family: "JetBrains Mono", serif;
     font-size: 50px;
@@ -117,20 +169,23 @@ body {
 .timeline {
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start; /* Align the items to the top to keep them aligned */
     min-height: 100vh;
-    padding: 0 5%; /* Reduce padding to push columns towards the ends of the screen */
+    padding: 0 2%; /* Reduced the padding */
+    flex-wrap: wrap; /* Allow the columns to wrap to the next line if necessary */
 }
 
 .timeline .timeline-row {
     display: flex;
-    flex-direction: column; /* Stack columns vertically on smaller screens */
-    row-gap: 40px; /* Add gap between rows */
-    justify-content: space-between; /* Distribute columns evenly */
+    flex-direction: row; /* Make sure it's row by default */
+    justify-content: space-between;
+    width: 100%; /* Ensure the row takes the full width */
+    row-gap: 40px; /* Keep the row-gap as is */
 }
 
 .timeline-row .timeline-column {
-    flex: 1 1 100%; /* Allow columns to take up full width */
+    flex: 1 1 45%; /* Adjusted column width to create more space for the cards */
+    margin: 0 2%; /* Reduced the margin between columns */
 }
 
 .timeline-column .title {
@@ -164,14 +219,14 @@ body {
 
 .timeline-content .content {
     padding: 24px;
-    background-color: #0d221b; /* Change background color to black */
-    color: white; /* Change text color to white */
-    border: none; /* Remove border */
+    background-color: #0d221b; /* Background color */
+    color: white; /* Text color */
+    border: none; /* No border */
     border-radius: 30px;
     margin-bottom: 32px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add shadow for card effect */
-    width: 100%; /* Add width to make the cards wider */
-    max-width: 600px; /* Increase the maximum width for the cards */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Shadow effect */
+    width: 100%; /* Full width */
+    max-width: 700px; /* Increased the max-width */
 }
 
 .timeline-content .content .content-header {
@@ -217,19 +272,116 @@ body {
     color: #ffffff; /* Ensure the text color is readable */
 }
 
-/* Media queries for responsiveness */
-@media (min-width: 768px) {
+@media (max-width: 768px) {
+    /* Adjust the timeline layout for smaller screens */
     .timeline .timeline-row {
-        flex-direction: row; /* Arrange columns side by side on larger screens */
-        column-gap: 80px; /* Keep the gap between columns */
+        flex-direction: column; /* Stack columns vertically */
+        row-gap: 40px; /* Maintain gap between rows */
     }
 
-    .timeline-row .timeline-column {
-        flex: 1 1 45%; /* Allow columns to take up 45% of the width */
+    .timeline-column {
+        flex: 1 1 100%; /* Allow columns to take up full width on smaller screens */
+        margin: 0; /* Reset margin on smaller screens */
     }
 
-    .timeline-row .timeline-column:nth-child(2) {
-        margin-left: 100px; /* Add left margin to move the experience column to the right */
-        margin-right: -100px; /* Reduce right margin */
+    .timeline-box .year-container {
+        position: relative; /* Remove absolute positioning */
+        left: 0; /* Reset left to ensure proper placement */
+        font-size: 16px; /* Adjust font size for smaller screens */
+        top: 10px; /* Add space at the top */
+        margin-left: 5px; /* Add margin to ensure the year isn't cut off */
+        margin-bottom: 40px; /* Add space between the year and the card */
+        color: #ff5500; /* Ensure year is visible */
+    }
+
+    .timeline-column .timeline-box {
+        padding-left: 0; /* Remove unnecessary padding */
+    }
+
+    /* Adjust content width on smaller screens */
+    .timeline-content .content {
+        width: 100%; /* Ensure content takes full width */
+        max-width: 100%; /* Adjust to make sure it fits */
+        margin-left: 10px; /* Add some margin to avoid touching screen edges */
+    }
+
+    .timeline-column .title {
+        font-size: 30px; /* Adjust title font size for smaller screens */
+        margin: 0 0 20px 20px; /* Adjust margin */
+    }
+
+    /* Ensure the year labels don't overlap with the timeline */
+    .timeline-box .timeline-content {
+        padding-left: 50px; /* Add left padding to prevent overlap */
+    }
+}
+
+.certifications-section {
+    text-align: center;
+    padding: 50px 0;
+    background-color: #f9f9f9;
+}
+
+.section-title {
+    font-size: 50px;
+    font-weight: bold;
+    margin-bottom: 30px;
+    color: #0d221b;
+}
+
+.certifications-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.certificate-card {
+    width: 400px;
+    background: #fff;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.certificate-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+}
+
+.certificate-image {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.certificate-info {
+    padding: 15px;
+    text-align: left;
+}
+
+.certificate-info h3 {
+    font-size: 18px;
+    font-weight: bold;
+    color: #ff5500;
+    margin-bottom: 5px;
+}
+
+.certificate-info p {
+    font-size: 14px;
+    color: #333;
+    margin: 2px 0;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .certifications-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .certificate-card {
+        width: 90%;
     }
 }
