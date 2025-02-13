@@ -173,6 +173,8 @@ body {
     min-height: 100vh;
     padding: 0 2%; /* Reduced the padding */
     flex-wrap: wrap; /* Allow the columns to wrap to the next line if necessary */
+    margin-left: 20px;
+    margin-right: 20px;
 }
 
 .timeline .timeline-row {
@@ -272,16 +274,34 @@ body {
     color: #ffffff; /* Ensure the text color is readable */
 }
 
+/* Move only the Experience column further to the right */
+.timeline-row .timeline-column.experience {
+    margin-left: 16%; /* Increased left margin to create more space */
+    margin-right: -100; /* Keep right alignment intact */
+    display: flex;
+    flex-direction: column;
+    align-items: normal; /* Keep the alignment natural */
+    width: 45%; /* Keep the same width as Education */
+}
+
+/* Ensure the experience content width matches education */
+.timeline-column.experience .timeline-content .content {
+    margin-left: auto;
+    width: 100%; /* Make sure it takes full width of the column */
+    max-width: 700px; /* Ensure it is the same as education cards */
+    padding-right: 10px; /* Reduce right padding if necessary */
+}
+
 @media (max-width: 768px) {
     /* Adjust the timeline layout for smaller screens */
+    
     .timeline .timeline-row {
-        flex-direction: column; /* Stack columns vertically */
-        row-gap: 40px; /* Maintain gap between rows */
+        flex-direction: column;
     }
 
     .timeline-column {
-        flex: 1 1 100%; /* Allow columns to take up full width on smaller screens */
-        margin: 0; /* Reset margin on smaller screens */
+        flex: 1 1 100%;
+        margin: 0;
     }
 
     .timeline-box .year-container {
@@ -313,6 +333,25 @@ body {
     /* Ensure the year labels don't overlap with the timeline */
     .timeline-box .timeline-content {
         padding-left: 50px; /* Add left padding to prevent overlap */
+    }
+
+    /* Move only the Experience column to the right with left margin */
+    .timeline-row .timeline-column.experience {
+        margin-left: 2%; /* Add left margin to push it slightly right */
+        margin-right: 0; /* Keep the right alignment */
+        display: flex;
+        flex-direction: column;
+        align-items: normal; /* Keep the alignment natural */
+        width: 99%; /* Ensure both columns (Education & Experience) have the same width */
+    }
+
+    /* Ensure the experience content width matches education */
+    .timeline-column.experience .timeline-content .content {
+        width: 100%; /* Make sure it takes full width of the column */
+    }
+
+    .timeline-column .title {
+        font-size: 50px; /* Increase font size for better readability */
     }
 }
 
@@ -384,4 +423,44 @@ body {
     .certificate-card {
         width: 90%;
     }
+}
+
+/* Style for the Download CV button container */
+.cv-download-btn-container {
+    text-align: center; /* Center the button */
+    margin-top: 40px; /* Space above the button */
+    margin-bottom: 40px; /* Space below the button */
+}
+
+/* Styling for the Download CV button */
+.cv-download-btn {
+    padding: 10px 20px; /* Reduced padding to make the button less wide */
+    font-size: 18px; /* Font size */
+    color: white; /* Text color */
+    background-color: #0d221b; /* Initial button color */
+    border-radius: 25px; /* Rounded corners */
+    text-decoration: none; /* Remove underline */
+    font-weight: bold; /* Make the text bold */
+    display: inline-flex; /* Use inline-flex to adjust the width based on content */
+    align-items: center;
+    justify-content: center; /* Ensure content is centered */
+    transition: background-color 0.3s ease, transform 0.3s ease, color 0.3s ease; /* Add transition for background color, transform, and color */
+}
+
+/* Button hover effect */
+.cv-download-btn:hover {
+    background-color: #ff5500; /* Change background color on hover */
+    transform: scale(1.1); /* Scale up slightly on hover */
+    color: #0d221b !important; /* Change text color to black on hover */
+}
+
+/* Button image or icon transition (if you use one in the button) */
+.cv-download-btn svg {
+    margin-right: 10px;
+    transition: transform 0.3s ease; /* Add transition for transform */
+}
+
+/* Image or icon movement on hover */
+.cv-download-btn:hover svg {
+    transform: translateX(5px); /* Move the image slightly to the right on hover */
 }

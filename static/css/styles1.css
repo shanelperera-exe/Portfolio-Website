@@ -240,11 +240,3 @@
     text-decoration: underline;
 }
 
-.mouse-click {
-    position: absolute;
-    right: 8%; /* Adjust to position the image on the bottom right corner of the main image */
-    bottom: 11%; /* Adjust to position the image on the bottom right corner of the main image */
-    width: 120px; /* Adjust width as needed */
-    height: auto; /* Maintain aspect ratio */
-    z-index: 20; /* Ensure the image is above the main image */
-}
