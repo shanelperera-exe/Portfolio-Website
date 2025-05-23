@@ -46,33 +46,93 @@
     }
 }
 
-.navbar {
+/* Main Navbar (Visible at the top) */
+.main-navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 10px;
-    font-family: Arial, sans-serif;
-    font-family: "JetBrains Mono", serif;
+    font-family: "JetBrains Mono", sans-serif;
     font-weight: bold;
-    animation: fadeIn 1s ease-in-out; /* Add fade-in animation */
-    position: fixed; /* Make the navbar fixed */
-    top: 0; /* Position it at the top */
-    width: 100%; /* Full width */
-    background-color: white; /* Ensure it has a background color */
-    z-index: 1000; /* Ensure it is above other elements */
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: white;
+    z-index: 1000;
+    transition: top 0.3s ease-in-out;
 }
 
+/* Fixed Navbar (Appears after scrolling down) */
+.fixed-navbar {
+    position: fixed;
+    top: 15px;
+    left: 15px;
+    background-color: #0d221b;
+    padding: 10px;
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 1001;
+    display: none;
+}
+
+/* Hamburger Menu Button */
+.hamburger-menu {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+/* Sidebar Menu */
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: -250px;
+    width: 250px;
+    height: 100%;
+    background-color: #0d221b;
+    color: white;
+    padding-top: 50px;
+    transition: left 0.3s ease;
+    z-index: 1002;
+}
+
+.sidebar a {
+    display: block;
+    padding: 15px;
+    color: white;
+    text-decoration: none;
+}
+
+.sidebar a:hover {
+    background-color: #ff5500;
+}
+
+/* Close Button for Sidebar */
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 30px;
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+}
+
+/* Navbar Links */
 .navbar a {
     text-decoration: none;
     color: #0d221b;
-    margin: 0 15px; /* Adjusted margin for more spacing */
-    padding: 5px 10px; /* Added padding for more spacing */
-    transition: color 0.3s ease, transform 0.3s ease; /* Add transition for color and transform */
+    margin: 0 15px;
+    padding: 5px 10px;
+    transition: color 0.3s ease, transform 0.3s ease;
 }
 
 .navbar .left {
     font-weight: bold;
-    padding-left: 15px; /* Added left padding */
+    padding-left: 15px;
 }
 
 .navbar .right {
@@ -80,33 +140,45 @@
 }
 
 .navbar .right a:hover {
-    color: #ff5500; /* Change color on hover */
-    transform: scale(1.1); /* Scale up slightly on hover */
+    color: #ff5500;
+    transform: scale(1.1);
 }
 
 .navbar .right a.current {
-    color: #ff5500; /* Highlight current directory in orange */
+    color: #ff5500;
 }
 
+/* Navbar Button */
 .navbar .btn-dark {
-    color: white; /* Make button text white */
-    background-color: #0d221b; /* Ensure the initial background color is set */
-    transition: background-color 0.3s ease, transform 0.3s ease, color 0.3s ease; /* Add transition for background color, transform, and color */
+    color: white;
+    background-color: #0d221b;
+    transition: background-color 0.3s ease, transform 0.3s ease, color 0.3s ease;
 }
 
 .navbar .btn-dark:hover {
-    background-color: #ff5500; /* Change background color on hover */
-    transform: scale(1.1); /* Scale up slightly on hover */
-    color: #0d221b !important; /* Change text color to black on hover */
+    background-color: #ff5500;
+    transform: scale(1.1);
+    color: #0d221b !important;
 }
 
+/* Button Image Animation */
 .navbar .btn-dark img {
     margin-left: 5px;
-    transition: transform 0.3s ease; /* Add transition for transform */
+    transition: transform 0.3s ease;
 }
 
 .navbar .btn-dark:hover img {
-    transform: translateX(5px); /* Move the image slightly to the right on hover */
+    transform: translateX(5px);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .main-navbar {
+        display: none;
+    }
+    .fixed-navbar {
+        display: block;
+    }
 }
 
 .intro-text {
